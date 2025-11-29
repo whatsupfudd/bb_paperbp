@@ -1,0 +1,147 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           paperbp
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/hugdro/paperbp#readme>
+homepage:       https://github.com/hugdro/paperbp#readme
+bug-reports:    https://github.com/hugdro/paperbp/issues
+author:         Hugo DesRosiers
+maintainer:     hugo.desrosiers@boardingcities.com
+copyright:      None.
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/hugdro/paperbp
+
+library
+  exposed-modules:
+      Commands
+      Commands.Help
+      Commands.Test
+      Commands.Version
+      Crypto.ECC.Chunking
+      Crypto.ECC.Test
+      Crypto.ECC.Types
+      Crypto.SecretSharing.GF256
+      Crypto.SecretSharing.Shamir
+      Crypto.SecretSharing.Test
+      Crypto.SecretSharing.Types
+      DB.Connect
+      DB.Opers
+      HttpSup.CorsPolicy
+      Layout.Page
+      MainLogic
+      Options
+      Options.Cli
+      Options.ConfFile
+      Options.Runtime
+      Output.PDF
+  other-modules:
+      Paths_paperbp
+  hs-source-dirs:
+      src
+  default-extensions:
+      OverloadedStrings
+      DuplicateRecordFields
+      OverloadedRecordDot
+  ghc-options: -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      HPDF
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , digest
+    , directory
+    , entropy
+    , fec
+    , filepath
+    , gitrev
+    , hedgehog
+    , mtl
+    , optparse-applicative
+    , text
+    , time
+    , unix
+    , vector
+    , yaml
+  default-language: Haskell2010
+
+executable paperbp
+  main-is: Main.hs
+  other-modules:
+      Paths_paperbp
+  hs-source-dirs:
+      app
+  default-extensions:
+      OverloadedStrings
+      DuplicateRecordFields
+      OverloadedRecordDot
+  ghc-options: -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HPDF
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , digest
+    , directory
+    , entropy
+    , fec
+    , filepath
+    , gitrev
+    , hedgehog
+    , mtl
+    , optparse-applicative
+    , paperbp
+    , text
+    , time
+    , unix
+    , vector
+    , yaml
+  default-language: Haskell2010
+
+test-suite paperbp-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_paperbp
+  hs-source-dirs:
+      test
+  default-extensions:
+      OverloadedStrings
+      DuplicateRecordFields
+      OverloadedRecordDot
+  ghc-options: -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HPDF
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , digest
+    , directory
+    , entropy
+    , fec
+    , filepath
+    , gitrev
+    , hedgehog
+    , mtl
+    , optparse-applicative
+    , paperbp
+    , text
+    , time
+    , unix
+    , vector
+    , yaml
+  default-language: Haskell2010

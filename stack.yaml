@@ -1,0 +1,15 @@
+snapshot:
+  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/22/44.yaml
+
+packages:
+- .
+
+extra-deps:
+#  - reedsolomon-0.0.4.3@sha256:83eb915c17f1f7d6b114ba854d492b9976a169f954fbd824967e954f2926ecf9,9362
+  - fec-0.2.0@sha256:e5740424d9a4b21e63a12ed9fad1cb099ff723c7f3bedca635276098822f7bb6,2451
+
+
+system-ghc: true
+allow-newer: true
+# allow-newer-deps:
+#  - reedsolomon
